@@ -43,8 +43,8 @@ if 'ON_HEROKU' in os.environ:
 def getStockData():
     stock = request.args.get('stock', default=None, type=None)
     quandl.ApiConfig.api_key = "qWcicxSctVxrP9PhyneG"
-    allData = quandl.get('WIKI/'+stock)
-    dataLength = 251
+    allData = quandl.get("BITFINEX/BTCUSD")
+    dataLength = 1000
     allDataLength = len(allData)
     firstDataElem = math.floor(random.random()*(allDataLength-dataLength))
     mlData = allData[0:firstDataElem+dataLength]
